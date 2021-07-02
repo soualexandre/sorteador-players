@@ -1,4 +1,4 @@
-import InputPlayer from './components/input'
+import Input from './components/input'
 import { ChakraProvider } from "@chakra-ui/react"
 
 
@@ -6,7 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react"
 function App() {
   return (
     <ChakraProvider>
-      <InputPlayer />
+      <Input />
     </ChakraProvider>
   );
 }
