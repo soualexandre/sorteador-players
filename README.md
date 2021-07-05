@@ -1,1 +1,3 @@
-Aplicação feita com o objetivo de sortear em qual time cada jogador vai cair antes de começar uma pelada
+## Sorteador de Jogadores 
+  ### objetivo
+    - Criar uma aplicação para sortear jogadores que irão jogar uma pelada de futebol para cada jogador cair em um time aleatório
