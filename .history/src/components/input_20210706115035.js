@@ -24,10 +24,7 @@ function InputPlayer() {
       e.preventDefault();
       const name = inputNameText.current.value;
 
-      setPlayer([...player, {
-        id:player.length,
-        value: name
-      }])
+     
     })
 
   return (

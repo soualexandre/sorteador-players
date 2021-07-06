@@ -16,18 +16,12 @@ const InputSubmit = styled.input`
   padding: 10px;
 `;
 function InputPlayer() {
-  const {player,setPlayer } = usePlayer();
+  const {setPlayer } = usePlayer();
   const inputNameText = useRef(null);
 
 
   const handlePlayer = useCallback(( e: FormEvent ) => {
       e.preventDefault();
-      const name = inputNameText.current.value;
-
-      setPlayer([...player, {
-        id:player.length,
-        value: name
-      }])
     })
 
   return (

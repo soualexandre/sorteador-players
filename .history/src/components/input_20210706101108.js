@@ -16,25 +16,26 @@ const InputSubmit = styled.input`
   padding: 10px;
 `;
 function InputPlayer() {
-  const {player,setPlayer } = usePlayer();
+  const { player, setPlayer } = usePlayer();
   const inputNameText = useRef(null);
 
 
   const handlePlayer = useCallback(( e: FormEvent ) => {
       e.preventDefault();
-      const name = inputNameText.current.value;
+      
+  })
 
-      setPlayer([...player, {
-        id:player.length,
-        value: name
-      }])
-    })
+
+  function newPlayer(e){
+    setPlayer(e.target.value);
+  }
 
   return (
     <div>
       <form onSubmit={handlePlayer}> 
         <Input
           placeholder="insira um nome"
+          name="name"
           ref={inputNameText}
         />
         <InputSubmit

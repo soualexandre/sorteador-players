@@ -28,6 +28,8 @@ function InputPlayer() {
         id:player.length,
         value: name
       }])
+
+     
     })
 
   return (

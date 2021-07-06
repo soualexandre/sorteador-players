@@ -4,8 +4,13 @@ export const PlayerContext = React.createContext({});
 
 export const PlayerProvider = (props) => {
 
-  const [player, setPlayer] = useState([]);
-  
+  const [player, setPlayer] = useState(
+      [
+        {name: ''}
+      ]
+  );
+
+  console.log(player.name)
 console.log(player);
   return (
     <PlayerContext.Provider value={{ player, setPlayer }}>

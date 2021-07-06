@@ -15,6 +15,7 @@ function Player() {
       >
         <Box m="5" as="a">
           <Heading ml="10" mb="0" as="h4" size="md">
+            {player}
           </Heading>
         </Box>
       </Box>

@@ -1,4 +1,4 @@
-import React, { useCallback, FormEvent, useRef } from "react";
+import React, { useCallback, FormEvent } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Input = styled.input`
@@ -16,25 +16,25 @@ const InputSubmit = styled.input`
   padding: 10px;
 `;
 function InputPlayer() {
-  const {player,setPlayer } = usePlayer();
+  const { player, setPlayer } = usePlayer();
   const inputNameText = useRef(null);
 
 
-  const handlePlayer = useCallback(( e: FormEvent ) => {
-      e.preventDefault();
-      const name = inputNameText.current.value;
+  const handlePlayer = useCallback((e: FormEvent ) => {
 
-      setPlayer([...player, {
-        id:player.length,
-        value: name
-      }])
-    })
+  })
+
+
+  function newPlayer(e){
+    setPlayer(e.target.value);
+  }
 
   return (
     <div>
       <form onSubmit={handlePlayer}> 
         <Input
           placeholder="insira um nome"
+          name="name"
           ref={inputNameText}
         />
         <InputSubmit

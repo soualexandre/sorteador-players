@@ -1,10 +1,14 @@
 import { Box, Container, Heading } from "@chakra-ui/react";
+import {  useState } from "react";
 import { usePlayer } from "../provider/playerProvider";
 
 function Player() {
-  const {player} = usePlayer();
+  const { player} = usePlayer();
+  // const [addPlayer, setAddPlayer] = useState({})
+  
   return (
     <div>
+      {players.map((player, index) => (
     <Container maxW="900px" mt="5">
       <Box
         maxW="900px"
@@ -19,6 +23,8 @@ function Player() {
         </Box>
       </Box>
     </Container>
+    ))}
+
     </div>
   );
 }

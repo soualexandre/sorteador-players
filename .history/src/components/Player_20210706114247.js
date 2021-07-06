@@ -3,6 +3,7 @@ import { usePlayer } from "../provider/playerProvider";
 
 function Player() {
   const {player} = usePlayer();
+  console.log(player)
   return (
     <div>
     <Container maxW="900px" mt="5">
@@ -15,6 +16,7 @@ function Player() {
       >
         <Box m="5" as="a">
           <Heading ml="10" mb="0" as="h4" size="md">
+            {player}
           </Heading>
         </Box>
       </Box>
