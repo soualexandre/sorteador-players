@@ -1,11 +1,13 @@
 import InputPlayer from "./components/input";
 import Player from "./components/Player";
-
+import './global.css'
 function App() {
   return (
     <>
-      <InputPlayer />
-      <Player />
+      <div className="app">
+        <InputPlayer />
+        <Player />
+      </div>
     </>
   );
 }

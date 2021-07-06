@@ -1,49 +1,33 @@
 import React, { useCallback, FormEvent, useRef } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
-const Container = styled.div`
-  display:flex;
-  align-items: center;
-  justify-Content: center;
-  margin-top: 50px;
-`;
 const Input = styled.input`
-  width: 800px;
+  width: 90%;
   height: 50px;
   border-radius: 10px;
   color: black;
   padding: 10px;
-  font-size: 22px;
-
 `;
 const InputSubmit = styled.input`
-  width: 100px;
-  height: 55px;
+  width: 30%;
+  height: 50px;
   border-radius: 10px;
-  color: white;
+  color: black;
   padding: 10px;
-  background: green;
-  margin-left: 10px;
 `;
 function InputPlayer() {
-  const {player,setPlayer } = usePlayer();
+  const {setPlayer } = usePlayer();
   const inputNameText = useRef(null);
-
 
 
   const handlePlayer = useCallback(( e: FormEvent ) => {
       e.preventDefault();
       const name = inputNameText.current.value;
-      setPlayer([...player, {
-        id:player.length,
-        value: name
-      }])
-      e.target.reset();
+      setPlayer(name)
     })
-   
 
   return (
-    <Container>
+    <div>
       <form onSubmit={handlePlayer}> 
         <Input
           placeholder="insira um nome"
@@ -54,7 +38,7 @@ function InputPlayer() {
           value="Adicionar"
         />
       </form>
-    </Container>
+    </div>
   );
 }
 

@@ -4,8 +4,7 @@ export const PlayerContext = React.createContext({});
 
 export const PlayerProvider = (props) => {
 
-  const [player, setPlayer] = useState([]);
-  
+  const [player, setPlayer] = useState({});
 console.log(player);
   return (
     <PlayerContext.Provider value={{ player, setPlayer }}>
