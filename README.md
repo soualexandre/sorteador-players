@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="sorteador" src="./sorteador.jpeg" width="80%">
+  <img alt="sorteador" src="./sorteador.png" width="80%">
 </p>
 ## Sorteador de membros 
   ### objetivo
