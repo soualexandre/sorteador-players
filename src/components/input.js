@@ -24,6 +24,7 @@ function InputPlayer() {
 
   }
   function newPlayer(e){
+    e.preventDefault();
     setPlayer(e.target.value);
   }
 
