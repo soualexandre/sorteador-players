@@ -1,29 +1,46 @@
-import React, { useSate } from "react";
-import { Button, Input, Container, Stack } from "@chakra-ui/react";
+import React from "react";
+import styled from "styled-components";
+import { usePlayer } from "../provider/playerProvider";
+const Input = styled.input`
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+`;
+const InputSubmit = styled.input`
+  width: 30%;
+  height: 50px;
+  border-radius: 10px;
+  color: black;
+  padding: 10px;
+`;
 function InputPlayer() {
+  const { player, setPlayer } = usePlayer();
 
-//   const [listName, setListName] = useSate({
-//     name: ""
-//   });
-// console.log(listName.name);
+  function handlePlayer(e){
+    e.preventDefault();
+    console.log(e.target);
+
+  }
+  function newPlayer(e){
+    setPlayer(e.target.value);
+  }
 
   return (
-    <Container maxW="900px">
-      <Stack spacing={3} mt={10} direction="row" alignItems="center">
+    <div>
+      <form onSubmit={handlePlayer}> 
         <Input
-          height="55px"
-          // onChange={(e) => setListName({name: e.target.value})}
-          bg="white"
-          type="text"
-          placeholder="Player name"
-          color="black"
-          size="lg"
+          placeholder="insira um nome"
+          name="name"
+          onBlur={newPlayer}
         />
-        <Button bg="#93DAA6" color="black" height="55px" w="100px">
-          Adicionar
-        </Button>
-      </Stack>
-    </Container>
+        <InputSubmit
+          type="submit"
+          value="Adicionar"
+        />
+      </form>
+    </div>
   );
 }
 
