@@ -13,7 +13,7 @@ const Form = styled.form`
   justify-Content: center;
 `;
 const Input = styled.input`
-  width: 50vw;
+  width: 800px;
   height: 50px;
   border-radius: 2px;
   color: white;

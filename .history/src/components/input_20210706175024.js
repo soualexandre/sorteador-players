@@ -20,6 +20,7 @@ const Input = styled.input`
   padding: 10px;
   font-size: 20px;
   border: 1px solid #fff;
+  : linear-gradient(red, yellow);
 `;
 const InputSubmit = styled.input`
   width: 10vw;

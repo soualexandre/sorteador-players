@@ -13,7 +13,7 @@ align-items: center;
 const Card = styled.div`
   width: 60vw;
   height: 60px;
-  border: 1px solid gray;
+  border: 1px solid white;
   padding: 20px;
   border-radius: 2px;
   font-size: 18px;

@@ -15,12 +15,12 @@ function App() {
   return (
     <>
       <div className="app">
-      <FloatButton/>
         <Titulo>
           Sorteador de equipes
         </Titulo>
         <InputPlayer />
         <Player />
+        <FloatButton/>
 
       </div>
     </>

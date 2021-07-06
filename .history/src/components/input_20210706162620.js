@@ -1,11 +1,11 @@
-import React, {  FormEvent, useRef } from "react";
+import React, { useCallback, FormEvent, useRef } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Container = styled.div`
   display:flex;
   align-items: center;
   justify-Content: center;
-  margin-top: 30px;
+  margin-top: 50px;
 `;
 const Form = styled.form`
   display:flex;
@@ -13,7 +13,7 @@ const Form = styled.form`
   justify-Content: center;
 `;
 const Input = styled.input`
-  width: 50vw;
+  width: 800px;
   height: 50px;
   border-radius: 2px;
   color: white;
@@ -22,41 +22,36 @@ const Input = styled.input`
   border: 1px solid #fff;
 `;
 const InputSubmit = styled.input`
-  width: 10vw;
-  height: 9vh;
+  width: 100px;
+  height: 55px;
   border-radius: 2px;
-  color: black;
-  font-weight: bolder;
+  color: white;
   padding: 10px;
-  background: #8BE37F;
+  background: green;
   margin-left: 10px;
   border: 0;
   &:hover .Button{
-    background: #fff;
+    background: #000;
   }
 `;
 function InputPlayer() {
-  const { player, setPlayer } = usePlayer();
+  const {player,setPlayer } = usePlayer();
   const inputNameText = useRef(null);
 
-  const handlePlayer = ((e: FormEvent) => {
-    e.preventDefault();
-    const name = inputNameText.current.value;
-    
-    if (name !== "") {
+  const handlePlayer = useCallback(( e: FormEvent ) => {
+      e.preventDefault();
+      const name = inputNameText.current.value;
       setPlayer([...player, {
-          id: player.length,
-          value: name,
-          order: 0,
-        }])
-    }
-    e.target.reset();
-  })
-
+        id:player.length,
+        value: name
+      }])
+      e.target.reset();
+    })
+   
 
   return (
     <Container>
-      <Form onSubmit={handlePlayer}>
+      <Form onSubmit={handlePlayer}> 
         <Input
           placeholder="insira um nome"
           ref={inputNameText}

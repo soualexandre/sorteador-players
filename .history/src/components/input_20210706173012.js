@@ -13,7 +13,7 @@ const Form = styled.form`
   justify-Content: center;
 `;
 const Input = styled.input`
-  width: 50vw;
+  width: 800px;
   height: 50px;
   border-radius: 2px;
   color: white;
@@ -23,7 +23,7 @@ const Input = styled.input`
 `;
 const InputSubmit = styled.input`
   width: 10vw;
-  height: 9vh;
+  height: 10vh;
   border-radius: 2px;
   color: black;
   font-weight: bolder;

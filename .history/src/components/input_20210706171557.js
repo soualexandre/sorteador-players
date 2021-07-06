@@ -1,4 +1,4 @@
-import React, {  FormEvent, useRef } from "react";
+import React, { useCallback, FormEvent, useRef } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Container = styled.div`
@@ -13,7 +13,7 @@ const Form = styled.form`
   justify-Content: center;
 `;
 const Input = styled.input`
-  width: 50vw;
+  width: 800px;
   height: 50px;
   border-radius: 2px;
   color: white;
@@ -22,8 +22,8 @@ const Input = styled.input`
   border: 1px solid #fff;
 `;
 const InputSubmit = styled.input`
-  width: 10vw;
-  height: 9vh;
+  width: 100px;
+  height: 55px;
   border-radius: 2px;
   color: black;
   font-weight: bolder;
@@ -39,15 +39,15 @@ function InputPlayer() {
   const { player, setPlayer } = usePlayer();
   const inputNameText = useRef(null);
 
-  const handlePlayer = ((e: FormEvent) => {
+  const handlePlayer = useCallback((e: FormEvent) => {
     e.preventDefault();
     const name = inputNameText.current.value;
     
-    if (name !== "") {
+    if (name != "") {
       setPlayer([...player, {
           id: player.length,
           value: name,
-          order: 0,
+          order: Math.round(random() *100 )
         }])
     }
     e.target.reset();

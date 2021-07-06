@@ -16,6 +16,7 @@ function App() {
     <>
       <div className="app">
       <FloatButton/>
+
         <Titulo>
           Sorteador de equipes
         </Titulo>
