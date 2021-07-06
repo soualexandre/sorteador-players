@@ -6,14 +6,14 @@ const Div = styled.div`
  list-style: none;
  padding-top: 50px;
  display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: center;
 align-items: center;
 `;
 const Card = styled.div`
   width: 800px;
   height: 60px;
-  border: 1px solid white;
+  border: 1px solid black;
   padding: 20px;
   border-radius: 2px;
   font-size: 18px;
@@ -21,7 +21,6 @@ const Card = styled.div`
   display: flex;
   justify-content:Center;
   margin-bottom: 15px;
-  color: white;
 `;
 function Player() {
   const { player } = usePlayer();
@@ -31,7 +30,7 @@ function Player() {
         <li key={player.id}>
           <Card>
             <p ml="10" mb="0" as="h4" size="md">
-            <span>{player.id+1} - </span>  {player.value}
+              {player.value}
             </p>
           </Card>
         </li>

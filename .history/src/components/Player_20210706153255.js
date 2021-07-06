@@ -21,7 +21,6 @@ const Card = styled.div`
   display: flex;
   justify-content:Center;
   margin-bottom: 15px;
-  color: white;
 `;
 function Player() {
   const { player } = usePlayer();

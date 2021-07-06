@@ -11,26 +11,25 @@ const Form = styled.form`
   display:flex;
   align-items: center;
   justify-Content: center;
+  margin-top: 50px;
 `;
 const Input = styled.input`
   width: 800px;
   height: 50px;
-  border-radius: 2px;
-  color: white;
+  border-radius: 10px;
+  color: black;
   padding: 10px;
-  font-size: 20px;
-  border: 1px solid #fff;
+  font-size: 22px;
+
 `;
 const InputSubmit = styled.input`
   width: 100px;
   height: 55px;
-  border-radius: 2px;
+  border-radius: 10px;
   color: white;
   padding: 10px;
   background: green;
   margin-left: 10px;
-  border: 0;
-
 `;
 function InputPlayer() {
   const {player,setPlayer } = usePlayer();

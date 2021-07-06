@@ -14,6 +14,7 @@ const Card = styled.div`
   width: 800px;
   height: 60px;
   border: 1px solid white;
+  background: white;
   padding: 20px;
   border-radius: 2px;
   font-size: 18px;
@@ -21,7 +22,6 @@ const Card = styled.div`
   display: flex;
   justify-content:Center;
   margin-bottom: 15px;
-  color: white;
 `;
 function Player() {
   const { player } = usePlayer();
