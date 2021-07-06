@@ -4,5 +4,5 @@
 
 
 ## Sorteador de membros 
-  ### objetivo
+  ### Objetivo
     - Criar uma aplicação para sortear membros e dividir entre várias equipes
