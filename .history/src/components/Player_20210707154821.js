@@ -14,7 +14,7 @@ const Div = styled.div`
 `;
 const Card = styled.div`
   position: relative;
-  width: 59vw;
+  width: 60vw;
   height: 25px;
   border: 1px solid gray;
   padding: 20px;
@@ -24,6 +24,7 @@ const Card = styled.div`
   align-items: center;
   margin-bottom: 10px;
   font-size: 18px;
+  font-weight: lighter;
   list-style: none;
   color: white;
   overflow: hidden;
@@ -44,8 +45,6 @@ const Image = styled.img`
 `;
 const P = styled.p`
 background: #1C1F23 ;
-font-weight: lighter;
-
 `;
 const Span = styled.span`
 background: #1C1F23 ;

@@ -9,11 +9,11 @@ const Box = styled.button`
   position: fixed;
   right: 12%;
   bottom: 5vh;
-  width: 80px;
+  width: 100px;
   border: 0;
-  height: 80px;
+  height: 100px;
   border-radius: 100%;
-  background: #BAEBDD;
+  background: #8be37f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,11 +22,7 @@ const Box = styled.button`
   @media(max-width: 800px) {
     right: 8%;
   }
-  &:hover{
-    background:#8be37f;
-  }
 `;
-
 
 function FloatButton() {
   const { player, setPlayer } = usePlayer();
@@ -45,8 +41,6 @@ function FloatButton() {
   }
 
   function cut() {
-
-  
 
 
   }

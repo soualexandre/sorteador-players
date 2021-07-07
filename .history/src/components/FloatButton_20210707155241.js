@@ -27,7 +27,6 @@ const Box = styled.button`
   }
 `;
 
-
 function FloatButton() {
   const { player, setPlayer } = usePlayer();
   const history = useHistory();
@@ -45,8 +44,6 @@ function FloatButton() {
   }
 
   function cut() {
-
-  
 
 
   }

@@ -32,7 +32,7 @@ const InputSubmit = styled.input`
   color: black;
   font-weight: bolder;
   padding: 10px;
-  background: #BAEBDD;
+  background: #8be37f;
   margin-left: 10px;
   border: 0;
   overflow: hidden;
@@ -42,7 +42,7 @@ const InputSubmit = styled.input`
     height: 8vh;
   }
   &:hover{
-    background:#8be37f;
+    background:#BAEBDD;
   }
 `;
 function InputPlayer() {

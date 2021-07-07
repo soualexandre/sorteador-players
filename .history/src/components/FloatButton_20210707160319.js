@@ -45,9 +45,11 @@ function FloatButton() {
   }
 
   function cut() {
-
   
-
+    for( let i = 0 ; i<= player.length; i++){
+      const a = player.slice(0,2);
+      console.log(a)
+    }
 
   }
 

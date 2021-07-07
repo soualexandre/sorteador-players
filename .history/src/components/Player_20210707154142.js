@@ -14,8 +14,8 @@ const Div = styled.div`
 `;
 const Card = styled.div`
   position: relative;
-  width: 59vw;
-  height: 25px;
+  width: 60vw;
+  height: 40px;
   border: 1px solid gray;
   padding: 20px;
   background: #1C1F23;
@@ -23,16 +23,15 @@ const Card = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 22px;
   list-style: none;
   color: white;
   overflow: hidden;
-
   @media(max-width: 800px) {
     width: 90vw;
   }
   &:hover{
-    background:rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
 
 `;
@@ -44,8 +43,6 @@ const Image = styled.img`
 `;
 const P = styled.p`
 background: #1C1F23 ;
-font-weight: lighter;
-
 `;
 const Span = styled.span`
 background: #1C1F23 ;

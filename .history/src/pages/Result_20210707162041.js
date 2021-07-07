@@ -26,9 +26,6 @@ const Card = styled.div`
   margin-bottom: 15px;
   color: white;
   overflow: hidden;
-  &:hover{
-    background:rgba(0, 0, 0, 0.2);
-  }
 `;
 const P = styled.p`
 background: #1C1F23 ;

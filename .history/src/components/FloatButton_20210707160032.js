@@ -46,8 +46,6 @@ function FloatButton() {
 
   function cut() {
 
-  
-
 
   }
 

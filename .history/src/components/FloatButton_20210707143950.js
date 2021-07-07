@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 const Div = styled.div`
   position: relative;
 `;
@@ -9,11 +9,11 @@ const Box = styled.button`
   position: fixed;
   right: 12%;
   bottom: 5vh;
-  width: 80px;
+  width: 100px;
   border: 0;
-  height: 80px;
+  height: 100px;
   border-radius: 100%;
-  background: #BAEBDD;
+  background: #8be37f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,11 +22,7 @@ const Box = styled.button`
   @media(max-width: 800px) {
     right: 8%;
   }
-  &:hover{
-    background:#8be37f;
-  }
 `;
-
 
 function FloatButton() {
   const { player, setPlayer } = usePlayer();
@@ -34,7 +30,7 @@ function FloatButton() {
 
   function handleSorteio() {
     player.forEach(players => {
-      const valueRandom = Math.random() * 100;
+      const valueRandom = Math.floor(Math.random() * 100);
 
       players.order = valueRandom;
       setPlayer(player)
@@ -43,13 +39,10 @@ function FloatButton() {
 
     handleOrder();
   }
-
-  function cut() {
-
-  
-
-
-  }
+function cut (){
+  const a = player.slice([0, [2]]);
+  console.log("slice ", a);
+}
 
   function handleOrder() {
     cut();
