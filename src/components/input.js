@@ -1,16 +1,17 @@
-import React, {  FormEvent, useRef } from "react";
+import React, { FormEvent, useRef } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Container = styled.div`
-  display:flex;
+  display: flex;
   align-items: center;
-  justify-Content: center;
+  justify-content: center;
   margin-top: 30px;
 `;
 const Form = styled.form`
-  display:flex;
+  display: flex;
   align-items: center;
-  justify-Content: center;
+  justify-content: center;
+
 `;
 const Input = styled.input`
   width: 50vw;
@@ -23,49 +24,44 @@ const Input = styled.input`
 `;
 const InputSubmit = styled.input`
   width: 10vw;
-  height: 9vh;
+  height: 60px;
   border-radius: 2px;
   color: black;
   font-weight: bolder;
   padding: 10px;
-  background: #8BE37F;
+  background: #8be37f;
   margin-left: 10px;
   border: 0;
-  &:hover .Button{
-    background: #fff;
-  }
+  overflow: hidden;
+  white-space: nowrap;
 `;
 function InputPlayer() {
   const { player, setPlayer } = usePlayer();
   const inputNameText = useRef(null);
 
-  const handlePlayer = ((e: FormEvent) => {
+  const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
     const name = inputNameText.current.value;
-    
+    const valueRandom = Math.floor(Math.random() * 100);
+    console.log(valueRandom);
     if (name !== "") {
-      setPlayer([...player, {
+      setPlayer([
+        ...player,
+        {
           id: player.length,
           value: name,
-          order: 0,
-        }])
+          order: valueRandom,
+        },
+      ]);
     }
     e.target.reset();
-  })
-
+  };
 
   return (
     <Container>
       <Form onSubmit={handlePlayer}>
-        <Input
-          placeholder="insira um nome"
-          ref={inputNameText}
-        />
-        <InputSubmit
-          type="submit"
-          value="Adicionar"
-          className="Button"
-        />
+        <Input placeholder="insira um nome" ref={inputNameText} />
+        <InputSubmit type="submit" value="Adicionar" className="Button" />
       </Form>
     </Container>
   );

@@ -1,29 +1,25 @@
-import InputPlayer from "./components/input";
-import Player from "./components/Player";
-import './global.css'
-import styled from "styled-components";
-import FloatButton from './components/FloatButton'
+import "./global.css";
+import { BrowserRouter as Router, Route, Switch,  } from "react-router-dom";
 
-const Titulo = styled.h1`
-display: flex;
-margin-top: 35px;
-justify-content: center;
-  color: white;
-  text-align: center;
-`;
-function App() {
+import Result from "./pages/Result";
+import Dashboard from "./pages/Dashboard";
+
+const App = () => {
   return (
-    <>
-      <div className="app">
-      <FloatButton/>
-        <Titulo>
-          Sorteador de equipes
-        </Titulo>
-        <InputPlayer />
-        <Player />
-
-      </div>
-    </>
+    <Router>
+    
+        <Switch>
+          <Route exact path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route exact path="/result">
+            <Result />
+          </Route>
+          <Route exact path="/">
+            <Dashboard />
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 
