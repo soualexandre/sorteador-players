@@ -26,20 +26,21 @@ const Box = styled.button`
 
 function FloatButton() {
   const { player, setPlayer } = usePlayer();
-  console.log(player)
   const history = useHistory();
 
   function handleSorteio() {
+
     player.forEach(players => {
       const valueRandom = Math.floor(Math.random() * 100);
-
       players.order = valueRandom;
-      setPlayer(player)
+
 
     });
 
-    handleOrder();
+
+
   }
+
 
 
   function handleOrder() {

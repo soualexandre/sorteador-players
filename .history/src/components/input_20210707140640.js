@@ -49,13 +49,14 @@ function InputPlayer() {
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
     const name = inputNameText.current.value;
+    const valueRandom = Math.floor(Math.random() * 100);
     if (name !== "") {
       setPlayer([
         ...player,
         {
           id: player.length,
           value: name,
-          order: 0,
+          order: valueRandom,
         },
       ]);
     }

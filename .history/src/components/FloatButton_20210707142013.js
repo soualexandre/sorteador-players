@@ -26,21 +26,18 @@ const Box = styled.button`
 
 function FloatButton() {
   const { player, setPlayer } = usePlayer();
-  console.log(player)
   const history = useHistory();
 
   function handleSorteio() {
+
     player.forEach(players => {
       const valueRandom = Math.floor(Math.random() * 100);
-
-      players.order = valueRandom;
-      setPlayer(player)
-
+      // player.order = valueRandom;
+      // setPlayer(players)
+       
     });
-
-    handleOrder();
+    handleSorteio();
   }
-
 
   function handleOrder() {
     const a = player.sort(function (a, b) {
@@ -50,6 +47,7 @@ function FloatButton() {
         return true;
       }
     });
+
     if (player.length > 1) {
       setPlayer(a);
       history.push('/result')
@@ -59,8 +57,9 @@ function FloatButton() {
       toast.error("Insira mais participantes para poder sortear")
     }
   }
-  return (
 
+
+  return (
     <Div>
       <Box onClick={handleSorteio}>Sortear</Box>
     </Div>
