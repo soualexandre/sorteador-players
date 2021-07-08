@@ -34,11 +34,12 @@ function FloatButton() {
 
   function handleSorteio() {
     player.forEach(players => {
-      const valueRandom = Math.random() * 100;
-
+      const valueOne = Math.random() * 100;
+      const valueTwo = Math.random() * 100;
+      const valueRandom = ((valueOne + valueTwo)/2)
       players.order = valueRandom;
       setPlayer(player)
-
+      console.log(player)
     });
 
     handleOrder();
