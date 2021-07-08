@@ -39,22 +39,12 @@ function FloatButton() {
       const valueRandom = ((valueOne + valueTwo)/2)
       players.order = valueRandom;
       setPlayer(player)
-      console.log(player)
     });
 
     handleOrder();
   }
 
-  function cut() {
-
-  
-
-
-  }
-
   function handleOrder() {
-    cut();
-
     const a = player.sort(function (a, b) {
       if (a.order < b.order) {
         return -1;
@@ -65,7 +55,8 @@ function FloatButton() {
 
 
     if (player.length > 1) {
-      setPlayer(a);
+      const players = JSON.stringify(a)
+      localStorage.setItem('players', players)
       history.push('/result')
       toast.success("Os participantes foram sorteado com sucesso")
     }

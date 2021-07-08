@@ -36,15 +36,16 @@ background: #1C1F23 ;
 `;
 
 function Result() {
-  const { player} = usePlayer();
 
+  const localPlayers = localStorage.getItem('players')
+  const players = JSON.parse(localPlayers)
   return (
     <Div>
-      {player.map((player) => (
-        <li key={player.order}>
+      {players.map((players) => (
+        <li key={players.order}>
           <Card>
             <P ml="10" mb="0" as="h4" size="md">
-              {player.value}
+              {players.value}
             </P>
           </Card>
         </li>
