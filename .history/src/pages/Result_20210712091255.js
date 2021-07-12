@@ -1,5 +1,6 @@
 import { usePlayer } from "../provider/playerProvider";
 import styled from "styled-components";
+import { useState} from "react";
 const Div = styled.div`
   list-style: none;
   padding-top: 40px;
@@ -42,6 +43,7 @@ color: #fff;
 
 function Result() {
   const { player} = usePlayer();
+
 
   function handleShortPlayer(){
     var meuArray = player
