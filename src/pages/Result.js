@@ -1,6 +1,6 @@
 import { usePlayer } from "../provider/playerProvider";
 import styled from "styled-components";
-
+import { useState} from "react";
 const Div = styled.div`
   list-style: none;
   padding-top: 40px;
@@ -36,22 +36,40 @@ background: #1C1F23 ;
 `;
 
 function Result() {
+  const  [newPLayer] = useState([]);
+  const { player} = usePlayer();
 
-  const localPlayers = localStorage.getItem('players')
-  const players = JSON.parse(localPlayers)
+
+  function handleShortPlayer(){
+    var meuArray = player
+    ,novoArray = []
+    ,corte = 3;
+    for (var i = 0; i < meuArray.length; i = i + corte) {
+    novoArray.push(meuArray.slice(i, i + corte));
+    }
+    return novoArray;
+  }
+const players = handleShortPlayer();
+
+players.map(grupo => (
+  grupo.map(player => (
+    console.log("dfadsf",player.value)
+  ))
+))
+  
   return (
-    <Div>
-      {players.map((players) => (
-        <li key={players.order}>
-          <Card>
-            <P ml="10" mb="0" as="h4" size="md">
-              {players.value}
-            </P>
-          </Card>
-        </li>
-      ))}
-    </Div>
-  );
-}
-
+<main>
+{players.map(grupo => (
+  <section key={grupo[0].id}> 
+  <div>Grupo</div>
+    {grupo.map(player => (
+      <p key={player.id}>
+        <h1>Bora imprimir algo</h1> 
+         {player.value}
+      </p>
+    ))}
+  </section>
+))}
+</main>
+)}
 export default Result;

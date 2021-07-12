@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 import { toast } from "react-toastify";
+import { useState } from "react";
 const Div = styled.div`
   position: relative;
 `;
@@ -30,6 +31,7 @@ const Box = styled.button`
 
 function FloatButton() {
   const { player, setPlayer } = usePlayer();
+  const [newPlayer, setNewPLayer] = useState([]);
   const history = useHistory();
 
   function handleSorteio() {
@@ -38,25 +40,26 @@ function FloatButton() {
       const valueTwo = Math.random() * 100;
       const valueRandom = ((valueOne + valueTwo)/2)
       players.order = valueRandom;
-      setPlayer(player)
+      setPlayer(player)    
     });
 
     handleOrder();
   }
 
   function handleOrder() {
-    const a = player.sort(function (a, b) {
+   player.sort(function (a, b) {
       if (a.order < b.order) {
         return -1;
       } else {
         return true;
-      }
+      }     
     });
 
-
+   handleShortPlayer();
+   handleToasts();
+  }
+  function handleToasts(){
     if (player.length > 1) {
-      const players = JSON.stringify(a)
-      localStorage.setItem('players', players)
       history.push('/result')
       toast.success("Os participantes foram sorteado com sucesso")
     }
@@ -64,8 +67,18 @@ function FloatButton() {
       toast.error("Insira mais participantes para poder sortear")
     }
   }
-  return (
 
+  function handleShortPlayer(){
+    var meuArray = player
+    ,novoArray = []
+    ,corte = 3;
+    for (var i = 0; i < meuArray.length; i = i + corte) {
+    novoArray.push(meuArray.slice(i, i + corte));
+    }
+    setNewPLayer(novoArray) 
+
+  }
+  return (
     <Div>
       <Box onClick={handleSorteio}>Sortear</Box>
     </Div>
