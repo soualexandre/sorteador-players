@@ -34,6 +34,12 @@ const P = styled.p`
 background: #1C1F23 ;
   font-weight: lighter;
 `;
+const Group = styled.h1`
+color: #fff;
+  font-weight: bold;
+  text-align:center;
+  font-size: 32px
+`;
 
 function Result() {
   const  [newPLayer] = useState([]);
@@ -58,18 +64,21 @@ players.map(grupo => (
 ))
   
   return (
-<main>
+<Div>
 {players.map(grupo => (
   <section key={grupo[0].id}> 
-  <div>Grupo</div>
+  <Group>Grupo</Group> 
     {grupo.map(player => (
-      <p key={player.id}>
-        <h1>Bora imprimir algo</h1> 
+      <li key={player.id}>
+        <Card>
+      <P>
          {player.value}
-      </p>
+      </P>
+      </Card>
+      </li>
     ))}
   </section>
 ))}
-</main>
+</Div>
 )}
 export default Result;
