@@ -1,5 +1,6 @@
 import { usePlayer } from "../provider/playerProvider";
 import styled from "styled-components";
+import { useState} from "react";
 const Div = styled.div`
   list-style: none;
   padding-top: 40px;
@@ -12,7 +13,7 @@ const Div = styled.div`
 const Card = styled.div`
   position: relative;
   width: 60vw;
-  height: 15px;
+  height: 20px;
   border: 1px solid gray;
   padding: 20px;
   display: flex;
@@ -37,7 +38,7 @@ const Group = styled.h1`
 color: #fff;
   font-weight: bold;
   text-align:center;
-  font-size: 14px;
+  font-size: 32px
 `;
 
 function Result() {
@@ -45,10 +46,9 @@ function Result() {
 
 
   function handleShortPlayer(){
-    console.log(player[0].cut)
     var meuArray = player
     ,novoArray = []
-    ,corte = 2;
+    ,corte = 3;
     for (var i = 0; i < meuArray.length; i = i + corte) {
     novoArray.push(meuArray.slice(i, i + corte));
     }
@@ -56,6 +56,12 @@ function Result() {
   }
 const players = handleShortPlayer();
 
+players.map(grupo => (
+  grupo.map(player => (
+    console.log("dfadsf",player.value)
+  ))
+))
+  
   return (
 <Div>
 {players.map(grupo => (

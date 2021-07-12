@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef} from "react";
+import React, { FormEvent, useRef } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Container = styled.div`
@@ -15,20 +15,19 @@ const Form = styled.form`
 `;
 const Input = styled.input`
   width: 50vw;
-  height: 25px;
+  height: 30px;
   border-radius: 2px;
   color: Black;
   padding: 10px;
-  font-size: 18px;
+  font-size: 20px;
   border: 1px solid #fff;
   @media(max-width: 800px) {
-    width: 45vw;
+    width: 60vw;
   }
 `;
-
 const InputSubmit = styled.input`
   width: 10vw;
-  height: 47px;
+  height: 60px;
   border-radius: 2px;
   color: black;
   font-weight: bolder;
@@ -39,7 +38,7 @@ const InputSubmit = styled.input`
   overflow: hidden;
   white-space: nowrap;
   @media(max-width: 800px) {
-    width: 20vw;
+    width: 25vw;
     height: 8vh;
   }
   &:hover{
@@ -47,19 +46,24 @@ const InputSubmit = styled.input`
   }
 `;
 function InputPlayer() {
-  const { player, setPlayer} = usePlayer();
+  const { player, setPlayer } = usePlayer();
    const inputNameText = useRef(null);
+   const inputCut = useRef(null);
+
   
   
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
     const name = inputNameText.current.value;
+    const cut = inputCut.current.value;
+    console.log(cut)
     if (name !== "") {
       setPlayer([
         ...player,
         {
           id: player.length,
           value: name,
+          cut: inputCut,
           order: 0,
         },
       ]);
@@ -71,7 +75,8 @@ function InputPlayer() {
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
-        <InputSubmit type="submit" value="Adicionar" className="Button"/>
+        <Input placeholder="cut" ref={inputCut} />
+        <InputSubmit type="submit" value="Adicionar" className="Button" />
       </Form>
     </Container>
   );

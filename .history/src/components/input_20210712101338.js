@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef} from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Container = styled.div`
@@ -19,16 +19,27 @@ const Input = styled.input`
   border-radius: 2px;
   color: Black;
   padding: 10px;
-  font-size: 18px;
+  font-size: 20px;
   border: 1px solid #fff;
   @media(max-width: 800px) {
-    width: 45vw;
+    width: 60vw;
   }
 `;
-
+const InputCut = styled.input`
+  width: 5vw;
+  height: 25px;
+  border-radius: 2px;
+  color: Black;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #fff;
+  @media(max-width: 800px) {
+    width: 60vw;
+  }
+`;
 const InputSubmit = styled.input`
   width: 10vw;
-  height: 47px;
+  height: 50px;
   border-radius: 2px;
   color: black;
   font-weight: bolder;
@@ -39,7 +50,7 @@ const InputSubmit = styled.input`
   overflow: hidden;
   white-space: nowrap;
   @media(max-width: 800px) {
-    width: 20vw;
+    width: 25vw;
     height: 8vh;
   }
   &:hover{
@@ -47,19 +58,25 @@ const InputSubmit = styled.input`
   }
 `;
 function InputPlayer() {
-  const { player, setPlayer} = usePlayer();
+  const { player, setPlayer } = usePlayer();
    const inputNameText = useRef(null);
+   const [inputCut] = useState();
+    
+
   
   
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
     const name = inputNameText.current.value;
+   
+
     if (name !== "") {
       setPlayer([
         ...player,
         {
           id: player.length,
           value: name,
+          cut: 0,
           order: 0,
         },
       ]);
@@ -71,6 +88,7 @@ function InputPlayer() {
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
+        <InputCut placeholder="Cut" value={inputCut} onChange={(e) => e.target.value} />
         <InputSubmit type="submit" value="Adicionar" className="Button"/>
       </Form>
     </Container>

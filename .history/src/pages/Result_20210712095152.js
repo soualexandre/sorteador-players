@@ -37,7 +37,7 @@ const Group = styled.h1`
 color: #fff;
   font-weight: bold;
   text-align:center;
-  font-size: 14px;
+  font-size: 32px
 `;
 
 function Result() {
@@ -45,10 +45,9 @@ function Result() {
 
 
   function handleShortPlayer(){
-    console.log(player[0].cut)
     var meuArray = player
     ,novoArray = []
-    ,corte = 2;
+    ,corte = player.cut;
     for (var i = 0; i < meuArray.length; i = i + corte) {
     novoArray.push(meuArray.slice(i, i + corte));
     }
@@ -56,6 +55,12 @@ function Result() {
   }
 const players = handleShortPlayer();
 
+players.map(grupo => (
+  grupo.map(player => (
+    console.log("dfadsf",player.value)
+  ))
+))
+  
   return (
 <Div>
 {players.map(grupo => (

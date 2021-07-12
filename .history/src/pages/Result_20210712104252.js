@@ -38,6 +38,7 @@ color: #fff;
   font-weight: bold;
   text-align:center;
   font-size: 14px;
+  margin-top: 10px;
 `;
 
 function Result() {

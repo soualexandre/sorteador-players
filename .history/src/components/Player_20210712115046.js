@@ -14,7 +14,7 @@ const Div = styled.div`
 `;
 const Card = styled.div`
   position: relative;
-  width: 55vw;
+  width: 50vw;
   height: 10px;
   border: 1px solid gray;
   padding: 20px;

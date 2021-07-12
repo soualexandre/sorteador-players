@@ -37,7 +37,7 @@ const Group = styled.h1`
 color: #fff;
   font-weight: bold;
   text-align:center;
-  font-size: 14px;
+  font-size: 32px
 `;
 
 function Result() {
@@ -45,7 +45,7 @@ function Result() {
 
 
   function handleShortPlayer(){
-    console.log(player[0].cut)
+    console.log(player.id)
     var meuArray = player
     ,novoArray = []
     ,corte = 2;

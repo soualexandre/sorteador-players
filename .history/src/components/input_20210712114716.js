@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef} from "react";
+import React, { FormEvent, useRef } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Container = styled.div`
@@ -14,7 +14,7 @@ const Form = styled.form`
 
 `;
 const Input = styled.input`
-  width: 50vw;
+  width: 45vw;
   height: 25px;
   border-radius: 2px;
   color: Black;
@@ -71,7 +71,6 @@ function InputPlayer() {
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
-        <InputSubmit type="submit" value="Adicionar" className="Button"/>
       </Form>
     </Container>
   );

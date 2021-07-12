@@ -1,4 +1,4 @@
-import React, { FormEvent, useRef} from "react";
+import React, { FormEvent, useRef } from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
 const Container = styled.div`
@@ -14,18 +14,30 @@ const Form = styled.form`
 
 `;
 const Input = styled.input`
-  width: 50vw;
+  width: 45vw;
   height: 25px;
   border-radius: 2px;
   color: Black;
   padding: 10px;
-  font-size: 18px;
+  font-size: 20px;
   border: 1px solid #fff;
   @media(max-width: 800px) {
     width: 45vw;
   }
 `;
-
+const InputCut = styled.input`
+  width: 5vw;
+  height: 25px;
+  border-radius: 2px;
+  color: Black;
+  margin-left:5px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #fff;
+  @media(max-width: 800px) {
+    width: 10vw;
+  }
+`;
 const InputSubmit = styled.input`
   width: 10vw;
   height: 47px;
@@ -39,7 +51,7 @@ const InputSubmit = styled.input`
   overflow: hidden;
   white-space: nowrap;
   @media(max-width: 800px) {
-    width: 20vw;
+    width: 25vw;
     height: 8vh;
   }
   &:hover{
@@ -47,13 +59,15 @@ const InputSubmit = styled.input`
   }
 `;
 function InputPlayer() {
-  const { player, setPlayer} = usePlayer();
+  const { player, setPlayer } = usePlayer();
    const inputNameText = useRef(null);
+ 
   
   
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
     const name = inputNameText.current.value;
+
     if (name !== "") {
       setPlayer([
         ...player,
@@ -71,6 +85,7 @@ function InputPlayer() {
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
+        <InputCut placeholder="Equipes" type="Number"/>
         <InputSubmit type="submit" value="Adicionar" className="Button"/>
       </Form>
     </Container>

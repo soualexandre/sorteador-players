@@ -37,7 +37,7 @@ const Group = styled.h1`
 color: #fff;
   font-weight: bold;
   text-align:center;
-  font-size: 14px;
+  font-size: 32px
 `;
 
 function Result() {

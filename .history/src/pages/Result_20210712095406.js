@@ -37,7 +37,7 @@ const Group = styled.h1`
 color: #fff;
   font-weight: bold;
   text-align:center;
-  font-size: 14px;
+  font-size: 32px
 `;
 
 function Result() {
@@ -45,7 +45,7 @@ function Result() {
 
 
   function handleShortPlayer(){
-    console.log(player[0].cut)
+    console.log(player)
     var meuArray = player
     ,novoArray = []
     ,corte = 2;
@@ -56,6 +56,12 @@ function Result() {
   }
 const players = handleShortPlayer();
 
+players.map(grupo => (
+  grupo.map(player => (
+    console.log("dfadsf",player.value)
+  ))
+))
+  
   return (
 <Div>
 {players.map(grupo => (

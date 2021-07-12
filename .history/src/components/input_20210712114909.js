@@ -14,7 +14,7 @@ const Form = styled.form`
 
 `;
 const Input = styled.input`
-  width: 50vw;
+  width: 45vw;
   height: 25px;
   border-radius: 2px;
   color: Black;
