@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/global.css"],"names":[],"mappings":"AAAA,KACI,cAAe,CACf,QAAS,CACT,qBAAsB,CACtB,kBAAmB,CACnB,+BACJ","file":"main.01c1d911.chunk.css","sourcesContent":["body{\r\n    padding: 0 auto;\r\n    margin: 0;\r\n    box-sizing: border-box;\r\n    background: #263238;\r\n    font-family: 'Padauk', sans-serif;\r\n}\r\n"]}
