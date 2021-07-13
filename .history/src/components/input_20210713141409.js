@@ -14,7 +14,7 @@ const Form = styled.form`
 
 `;
 const Input = styled.input`
-  width: 40vw;
+  width: 50vw;
   height: 25px;
   border-radius: 2px;
   color: Black;
@@ -23,19 +23,6 @@ const Input = styled.input`
   border: 1px solid #fff;
   @media(max-width: 800px) {
     width: 45vw;
-  }
-`;
-const InputCut = styled.input`
-  width: 5vw;
-  height: 25px;
-  border-radius: 2px;
-  color: Black;
-  margin-left:10px;
-  padding: 10px;
-  font-size: 12px;
-  border: 1px solid #fff;
-  @media(max-width: 800px) {
-    width: 5vw;
   }
 `;
 
@@ -63,7 +50,7 @@ function InputPlayer() {
   const { player, setPlayer} = usePlayer();
    const inputNameText = useRef(null);
   const [cut, setCut] = useState();
-  console.log(cut)
+  
   localStorage.setItem('cut', cut);
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
@@ -85,7 +72,7 @@ function InputPlayer() {
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
-        <InputCut placeholder="Numero de participantes" type="Number" onChange={(e) => setCut(e.target.value) } />
+        <Input placeholder="insira um nome" onChange={(e) => setCut(e.target.value) } />
         <InputSubmit type="submit" value="Adicionar" className="Button"/>
       </Form>
     </Container>

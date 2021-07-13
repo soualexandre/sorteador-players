@@ -32,7 +32,7 @@ const InputCut = styled.input`
   color: Black;
   margin-left:10px;
   padding: 10px;
-  font-size: 12px;
+  font-size: 18px;
   border: 1px solid #fff;
   @media(max-width: 800px) {
     width: 5vw;

@@ -43,11 +43,14 @@ color: #fff;
 function Result() {
   const { player} = usePlayer();
 
-  let cutPlayers = JSON.parse(localStorage.getItem('cut'))
+  let cutPlayers = localStorage.getItem('cut')
+  console.log(cutPlayers);
+
   function handleShortPlayer(){
+    console.log(player[0].cut)
     var meuArray = player
     ,novoArray = []
-    ,corte = cutPlayers;
+    ,corte = 2;
     for (var i = 0; i < meuArray.length; i = i + corte) {
     novoArray.push(meuArray.slice(i, i + corte));
     }

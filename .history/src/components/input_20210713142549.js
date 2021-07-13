@@ -32,7 +32,7 @@ const InputCut = styled.input`
   color: Black;
   margin-left:10px;
   padding: 10px;
-  font-size: 12px;
+  font-size: 18px;
   border: 1px solid #fff;
   @media(max-width: 800px) {
     width: 5vw;
@@ -63,7 +63,7 @@ function InputPlayer() {
   const { player, setPlayer} = usePlayer();
    const inputNameText = useRef(null);
   const [cut, setCut] = useState();
-  console.log(cut)
+  
   localStorage.setItem('cut', cut);
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
@@ -85,7 +85,10 @@ function InputPlayer() {
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
-        <InputCut placeholder="Numero de participantes" type="Number" onChange={(e) => setCut(e.target.value) } />
+        <label>
+          Pessoa por equipe
+        <InputCut placeholder="insira um nome" onChange={(e) => setCut(e.target.value) } />
+        </label>
         <InputSubmit type="submit" value="Adicionar" className="Button"/>
       </Form>
     </Container>

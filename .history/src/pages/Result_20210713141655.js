@@ -43,8 +43,10 @@ color: #fff;
 function Result() {
   const { player} = usePlayer();
 
-  let cutPlayers = JSON.parse(localStorage.getItem('cut'))
+  let cutPlayers = localStorage.getItem('cut')
+
   function handleShortPlayer(){
+    console.log(player[0].cut)
     var meuArray = player
     ,novoArray = []
     ,corte = cutPlayers;

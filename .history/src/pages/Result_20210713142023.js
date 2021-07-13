@@ -44,6 +44,7 @@ function Result() {
   const { player} = usePlayer();
 
   let cutPlayers = JSON.parse(localStorage.getItem('cut'))
+
   function handleShortPlayer(){
     var meuArray = player
     ,novoArray = []

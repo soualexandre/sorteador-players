@@ -1,6 +1,9 @@
+import { useToast } from "@chakra-ui/react";
 import React, { FormEvent, useRef, useState} from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
+import { toast } from "react-toastify";
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -32,7 +35,7 @@ const InputCut = styled.input`
   color: Black;
   margin-left:10px;
   padding: 10px;
-  font-size: 12px;
+  font-size: 18px;
   border: 1px solid #fff;
   @media(max-width: 800px) {
     width: 5vw;
@@ -63,7 +66,10 @@ function InputPlayer() {
   const { player, setPlayer} = usePlayer();
    const inputNameText = useRef(null);
   const [cut, setCut] = useState();
-  console.log(cut)
+  
+  if(cut === ""){
+    toString.error("digite algo")
+  }
   localStorage.setItem('cut', cut);
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
@@ -85,7 +91,7 @@ function InputPlayer() {
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
-        <InputCut placeholder="Numero de participantes" type="Number" onChange={(e) => setCut(e.target.value) } />
+        <InputCut placeholder="insira um nome" type="Number" onChange={(e) => setCut(e.target.value) } />
         <InputSubmit type="submit" value="Adicionar" className="Button"/>
       </Form>
     </Container>

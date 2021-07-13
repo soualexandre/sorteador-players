@@ -47,7 +47,9 @@ background: #1C1F23 ;
 font-weight: lighter;
 
 `;
-
+const Span = styled.span`
+background: #1C1F23 ;
+`;
 function Player() {
   const { player, setPlayer } = usePlayer();
 
