@@ -2,7 +2,6 @@ import InputPlayer from "../components/input";
 import Player from "../components/Player";
 import "../global.css";
 import styled from "styled-components";
-import FloatButton from "../components/FloatButton";
 
 const Titulo = styled.h1`
   display: flex;
@@ -15,7 +14,6 @@ function Dashboard() {
   return (
     <>
         <div className="Dashboard">
-          <FloatButton />
           <Titulo>Sorteador de participantes</Titulo>
           <InputPlayer />
           <Player />

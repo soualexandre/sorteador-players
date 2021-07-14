@@ -1,6 +1,10 @@
 import React, { FormEvent, useRef, useState} from "react";
 import styled from "styled-components";
 import { usePlayer } from "../provider/playerProvider";
+import FloatButton from "../components/FloatButton";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
+
 const Container = styled.div`
   display: flex;
   align-items: center;
@@ -59,12 +63,16 @@ const InputSubmit = styled.input`
     background:#8be37f;
   }
 `;
-function InputPlayer() {
+function InputPlayer(props) {
   const { player, setPlayer} = usePlayer();
+  const history = useHistory();
+
    const inputNameText = useRef(null);
   const [cut, setCut] = useState();
-  console.log(cut)
+
   localStorage.setItem('cut', cut);
+
+
   const handlePlayer = (e: FormEvent) => {
     e.preventDefault();
     const name = inputNameText.current.value;
@@ -81,12 +89,53 @@ function InputPlayer() {
     e.target.reset();
   };
 
+  function handleSorteio() {
+    player.forEach(players => {
+      const valueOne = Math.random() * 100;
+      const valueTwo = Math.random() * 100;
+      const valueRandom = ((valueOne + valueTwo)/2)
+      players.order = valueRandom;
+    });
+    handleOrder();
+  }
+
+  function handleOrder() {
+   player.sort(function (a, b) {
+      if (a.order < b.order) {
+        return -1;
+      } else {
+        return true;
+      }     
+    });
+
+   handleToasts();
+  }
+
+
+const getCut = localStorage.getItem('cut');
+
+  function handleToasts(){
+    if (player.length > 1 && getCut !==  "undefined") {
+    history.push('/result')
+      toast.success("Os participantes foram sorteado com sucesso")
+    }
+    else {
+      toast.error("Insira mais participantes para poder sortear")
+    }
+  }
+
+
+
+
   return (
     <Container>
       <Form onSubmit={handlePlayer}>
         <Input placeholder="insira um nome" ref={inputNameText} />
-        <InputCut placeholder="Numero de participantes" type="Number" onChange={(e) => setCut(e.target.value) } />
         <InputSubmit type="submit" value="Adicionar" className="Button"/>
+      </Form>
+      <Form onSubmit={handleSorteio}>
+      <InputCut placeholder="Numero de participantes" required type="Number" onChange={(e) => setCut(e.target.value) } />
+      <FloatButton value="SORTEAR"/>
       </Form>
     </Container>
   );
