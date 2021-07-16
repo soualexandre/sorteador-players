@@ -39,7 +39,7 @@ const InputCut = styled.input`
   font-size: 12px;
   border: 1px solid #fff;
   @media(max-width: 800px) {
-    width: 5vw;
+    width: 10vw;
   }
 `;
 
@@ -57,7 +57,7 @@ const InputSubmit = styled.input`
   white-space: nowrap;
   @media(max-width: 800px) {
     width: 20vw;
-    height: 8vh;
+    height: 6vh;
   }
   &:hover{
     background:#8be37f;
