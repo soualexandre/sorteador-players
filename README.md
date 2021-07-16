@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="sorteador" src="./sorteador.png" width="80%">
+  <img alt="sorteador" src="./2021-07-16 11-34-55.gif" width="80%">
 </p>
 
 
