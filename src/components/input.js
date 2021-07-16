@@ -56,8 +56,10 @@ const InputSubmit = styled.input`
   overflow: hidden;
   white-space: nowrap;
   @media(max-width: 800px) {
+    display: flex;
+    justify-content: center;
     width: 20vw;
-    height: 6vh;
+    height: 49px;
   }
   &:hover{
     background:#8be37f;
