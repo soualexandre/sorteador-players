@@ -6,3 +6,8 @@
 ## Sorteador de membros 
   ### Objetivo
     - Criar uma aplicação para sortear membros e dividir entre várias equipes
+
+## Run
+  - cd pasta
+  - yarn
+  - yarn start
